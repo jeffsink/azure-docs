@@ -190,7 +190,7 @@ For different types of build environments, you can explicitly obtain the latest 
    
                 System.out.println("Calling forceExecutorShutdown");
                 EventProcessorHost.forceExecutorShutdown(120);
-            }
+             }
             catch(Exception e)
             {
                 System.out.println(e.toString());
@@ -215,7 +215,7 @@ For different types of build environments, you can explicitly obtain the latest 
     ```
 
 > [!NOTE]
-> This tutorial uses a single instance of EventProcessorHost. To increase throughput, it is recommended that you run multiple instances of EventProcessorHost. In those cases, the various instances automatically coordinate with each other in order to load balance the received events. If you want multiple receivers to each process *all* the events, you must use the **ConsumerGroup** concept. When receiving events from different machines, it might be useful to specify names for EventProcessorHost instances based on the machines (or roles) in which they are deployed.
+> This tutorial uses a single instance of EventProcessorHost. To increase throughput, it is recommended that you run multiple instances of EventProcessorHost, preferrably on separate machines.  This will also provide redundancy.  In those cases, the various instances automatically coordinate with each other in order to load balance the received events. If you want multiple receivers to each process *all* the events, you must use the **ConsumerGroup** concept. When receiving events from different machines, it might be useful to specify names for EventProcessorHost instances based on the machines (or roles) in which they are deployed.
 > 
 > 
 
